@@ -20,7 +20,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter basename="/flowstudio/">
+        <BrowserRouter basename=>
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
