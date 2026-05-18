@@ -7,7 +7,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export const CTA = () => {
   const { t } = useLanguage();
   useIsMobile();
-  const emailHref = "https://mail.google.com/mail/?view=cm&fs=1&to=contattiflowstudio@gmail.com";
+  const emailHref = "mailto:contattiflowstudio@gmail.com";
   const emailProps = { target: "_blank", rel: "noopener noreferrer" as const };
   return (
     <section id="contact" className="relative py-28 md:py-36">
