@@ -8,10 +8,7 @@ export const Footer = () => {
   const { t } = useLanguage();
   const isMobile = useIsMobile();
 
-  const phoneHref = isMobile
-    ? "https://wa.me/393520017088"
-    : "tel:+393520017088";
-
+  const phoneHref = isMobile ? "https://wa.me/393520017088" : "tel:+393520017088";
   const phoneProps = isMobile
     ? { target: "_blank", rel: "noopener noreferrer" as const }
     : {};
@@ -20,6 +17,7 @@ export const Footer = () => {
     <footer className="relative border-t border-border/50 pt-16 pb-8">
       <div className="container">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
+
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2">
               <span className="inline-flex h-10 w-10 items-center justify-center">
@@ -33,111 +31,55 @@ export const Footer = () => {
                   className="h-full w-full object-contain drop-shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
                 />
               </span>
-
               <span className="font-display text-xl font-bold">
                 Flow <span className="text-gradient-primary">Studio</span>
               </span>
             </Link>
-
             <p className="mt-4 text-muted-foreground max-w-sm">
               {t("footer.tagline")}
             </p>
           </div>
 
           <div>
-            <h4 className="font-display font-semibold mb-4">
-              {t("footer.studio")}
-            </h4>
-
+            <h4 className="font-display font-semibold mb-4">{t("footer.studio")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>
-                <Link
-                  to="/services"
-                  className="hover:text-foreground transition-colors"
-                >
-                  {t("nav.services")}
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/why-digital"
-                  className="hover:text-foreground transition-colors"
-                >
-                  {t("nav.whyDigital")}
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/portfolio"
-                  className="hover:text-foreground transition-colors"
-                >
-                  {t("nav.portfolio")}
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-foreground transition-colors"
-                >
-                  {t("nav.contact")}
-                </Link>
-              </li>
+              <li><Link to="/services" className="hover:text-foreground transition-colors">{t("nav.services")}</Link></li>
+              <li><Link to="/why-digital" className="hover:text-foreground transition-colors">{t("nav.whyDigital")}</Link></li>
+              <li><Link to="/portfolio" className="hover:text-foreground transition-colors">{t("nav.portfolio")}</Link></li>
+              <li><Link to="/contact" className="hover:text-foreground transition-colors">{t("nav.contact")}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display font-semibold mb-4">
-              {t("footer.contact")}
-            </h4>
-
+            <h4 className="font-display font-semibold mb-4">{t("footer.contact")}</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-primary shrink-0" />
-
-                <a
+                
                   href="mailto:contattiflowstudio@gmail.com"
                   className="hover:text-foreground transition-colors"
                 >
                   contattiflowstudio@gmail.com
                 </a>
               </li>
-
               <li className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-primary shrink-0" />
-
-                <a
-                  href={phoneHref}
-                  {...phoneProps}
-                  className="hover:text-foreground transition-colors"
-                >
+                <a href={phoneHref} {...phoneProps} className="hover:text-foreground transition-colors">
                   352 001 7088
                 </a>
               </li>
-
               <li className="flex items-center gap-2">
                 <MapPin className="h-3.5 w-3.5 text-primary shrink-0" />
-
                 <span>{t("footer.location")}</span>
               </li>
             </ul>
 
             <div className="mt-5 flex items-center gap-3">
               {[
-                {
-                  Icon: Instagram,
-                  href: "https://www.instagram.com/igflowstudio",
-                  label: "Instagram",
-                },
-                {
-                  Icon: Linkedin,
-                  href: "https://www.linkedin.com/in/flowstudio",
-                  label: "LinkedIn",
-                },
+                { Icon: Instagram, href: "https://www.instagram.com/igflowstudio", label: "Instagram" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/in/flowstudio", label: "LinkedIn" },
               ].map(({ Icon, href, label }) => (
-                <a
+                
                   key={label}
                   href={href}
                   target="_blank"
@@ -150,6 +92,7 @@ export const Footer = () => {
               ))}
             </div>
           </div>
+
         </div>
 
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
